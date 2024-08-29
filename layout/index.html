@@ -13,10 +13,17 @@
             <img src="logo.png" alt="WT Logo">
         </div>
         <nav class="nav-menu">
-            <a id="news-button" class="active">News</a>
-            <a id="service-button">Service</a>
-            <a id="portfolio-button">Portfolio</a>
-            <a id="testimonial-button">Testimonials</a>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a id="news-button">News</a></li>
+                <li><a id="service-button">Services</a></li>
+                <li><a id="portfolio-button">Portfolio</a></li>
+                <li><a id="testimonial-button">Testimonials</a></li>
+            </ul>
         </nav>
         <div class="search-container">
             <input type="text" placeholder="Search!">
@@ -189,6 +196,37 @@
                 </div>
             </div>
         </div>
+        <div class="comment-form-section">
+            <h3>Leave Your Comment!</h3>
+            <form action="#" class="comment-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Your Comment</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="captcha">Solve This: 4 * 2 =</label>
+                    <input type="text" id="captcha" name="captcha" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
 
 
     </div>
