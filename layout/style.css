@@ -114,6 +114,87 @@ body {
     margin: 0 5px;
 }
 
+/*Portfolio Style*/
+.portfolio-section {
+    padding: 20px;
+}
 
+.portfolio-section h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
+.filter-btn {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #f8c2c7;
+    color: #fff;
+}
+
+.portfolio-table {
+    width: 100%;
+    border-spacing: 0 20px;
+}
+
+.portfolio-row {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.portfolio-image {
+    width: 150px;
+    padding: 20px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.portfolio-details {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.portfolio-details h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: #d2698e;
+}
+
+.portfolio-details p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+.detail-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.detail-btn:hover {
+    background-color: #555;
+}

@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
         landingPage.style.display = 'block'
         portfolio.style.display = 'none'
         blog.style.display = 'none'
+    })
 
+    serviceButton.addEventListener('click', function () {
+        blog.style.display = 'block'
+        landingPage.style.display = 'none'
     })
 
 
