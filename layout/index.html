@@ -4,39 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <style>
-        /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8d9db;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo img {
-    width: 80px;
-}
-
-.nav-menu a {
-    margin: 0 10px;
-    color: #666;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header with Logo and Navigation -->
@@ -45,17 +13,18 @@ body {
             <img src="logo.png" alt="WT Logo">
         </div>
         <nav class="nav-menu">
-            <a href="#" class="active">News</a>
-            <a href="#">Service</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Testimonials</a>
+            <a id="news-button" class="active">News</a>
+            <a id="service-button">Service</a>
+            <a id="portfolio-button">Portfolio</a>
+            <a id="testimonial-button">Testimonials</a>
         </nav>
         <div class="search-container">
             <input type="text" placeholder="Search!">
             <button type="submit"><i class="search-icon"></i></button>
         </div>
     </header>
-
+<!--Landing Page-->
+    <div id="landing-page">
     <!-- Banner Section -->
     <section class="banner">
         <p>This Website serves you daily news</p>
@@ -66,12 +35,37 @@ body {
         <div class="news-card">
             <img src="./MEDIA_FILES/IMAGES/images%20(2).png" alt="News Image 1">
             <p>News Title</p>
+            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
         </div>
         <div class="news-card">
             <img src="./MEDIA_FILES/IMAGES/images%20(2).png" alt="News Image 2">
             <p>News Title</p>
+            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
         </div>
     </section>
+
+    </div>
+
+
+<!--Portfolio page-->
+    <div id="portfolio" style="display: none">
+        <section class="portfolio-section">
+            <h1>Portofolio</h1>
+            <div class="filter-buttons">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Category 1</button>
+                <button class="filter-btn">Category 2</button>
+                <button class="filter-btn">Category 3</button>
+            </div>
+
+
+        </section>
+    </div>
+
+<!--    Blog Page-->
+    <div id="blog" style="display: none">
+
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -82,5 +76,7 @@ body {
             <a href="#"><img src="./MEDIA_FILES/SOCIAL_MEDIA/Black%20and%20White/twitter.png" alt="Twitter"></a>
         </div>
     </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
