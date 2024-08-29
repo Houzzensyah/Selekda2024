@@ -28,27 +28,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const userFlag = document.getElementById('user-flag');
     const oppFlag = document.getElementById('opponent-flag');
     const ball = document.getElementById('ball')
-    const ballSkinSelect = document.getElementsByName('ball')
-
+    const ballSkinSelect = document.getElementsByName('balls')
 
     let score = 0;
     let pause = false;
     let level = 'easy';
     let timeDuration = 30;
-    let userCountry = 'brazil';
-    let oppenentCountry = 'brazil';
+    let userCountry = 'Brazil';
+    let oppenentCountry = 'England';
     let userCharacter = 'Character 01 - brazil'
-    let oppCharacter = 'Character 01 - brazil'
+    let oppCharacter = 'Character 02 - England'
     let timeRemaining;
-    let ballSkin = 'ball1'
-
+    let ballSkin = 'skin1'
 
 
     ballSkinSelect.forEach(radio => {
-        radio.addEventListener('change', function () {
+        radio.addEventListener('change',function () {
             if(this.checked) {
-                ballSkin = `./Sprites/${ball}.png`
-                ball.src = `./Sprites/${ball}.png`
+                ballSkin = this.value
             }
         })
     })
@@ -86,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 userFlag.src = './Sprites/Flag/Germany.png'
                 break
             case 'Character 08 - Italy' :
-                userCountry = 'italy'
+                userCountry = 'Italy'
                 userCharacter = 'Character 08 - Italy'
                 userFlag.src = './Sprites/Flag/Italy.png'
                 break
@@ -136,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 oppFlag.src = './Sprites/Flag/Germany.png'
                 break
             case 'Character 08 - Italy' :
-                oppenentCountry = 'italy'
+                oppenentCountry = 'Italy'
                 oppCharacter = 'Character 08 - Italy'
                 oppFlag.src = './Sprites/Flag/Italy.png'
                 break
@@ -337,7 +334,122 @@ document.addEventListener('DOMContentLoaded', function () {
         changeState(avatar, 'Kick');
         setTimeout(() => idle(avatar), 500);
     }
+    function startGame() {
 
+
+        gameplay.style.display = 'block'
+        player = createAvatar( userCharacter, 325, 430);
+        opponent = createAvatar( oppCharacter, 960, 430, true);
+
+
+        runAnimation(player);
+        runAnimation(opponent);
+        updatePosition(player);
+        updatePosition(opponent);
+
+
+        gameArea.style.display = 'block'
+
+        timeRemaining = timeDuration
+        gameTimer = setInterval(function () {
+            timeRemaining--;
+            timeNumber.textContent = `${timeRemaining}s`
+            if (timeRemaining <= 0){
+                clearInterval(gameTimer)
+                endGame()
+            }
+
+        },1000)
+    }
+
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'd') {
+            moveForward(player);
+        } else if (e.key === 'a') {
+            moveBackward(player);
+        } else if (e.key === 'w') {
+            jump(player);
+        } else if (e.key === ' ') {
+            kick(player);
+        } else if (e.key === 'ArrowRight') {
+            moveForward(opponent);
+        } else if (e.key === 'ArrowLeft') {
+            moveBackward(opponent);
+        } else if (e.key === 'ArrowUp') {
+            jump(opponent);
+        } else if (e.key === 'Enter') {
+            kick(opponent);
+        }else if(e.key === "Escape"){
+            if (!pause){
+                pauseGame()
+            }else {
+                resumeGame()
+            }
+        }
+
+    });
+
+    window.addEventListener('keyup', (e) => {
+        if (e.key === 'd' || e.key === 'a') {
+            idle(player);
+        }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            idle(opponent);
+        }
+    });
+
+    function pauseGame() {
+        pauseScreen.style.display = 'block';
+        pause = true;
+        clearInterval(gameTimer)
+
+    }
+
+    function resumeGame() {
+        pauseScreen.style.display = 'none';
+        pause = false;
+        countdownScreen.style.display = 'block'
+
+        let countdown = 3;
+        countdownNumber.textContent = `Game Start in : ${countdown}`;
+
+        const countdownInterval = setInterval(function () {
+            countdown--;
+            countdownNumber.textContent = `Game Start in : ${countdown}`;
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                countdownScreen.style.display = 'none';
+                pause = false
+                timeRemaining = timeDuration
+                const gameTimer = setInterval(function () {
+                    timeRemaining--;
+                    timeNumber.textContent = ` ${timeRemaining}s`
+                    if (timeRemaining <= 0){
+                        clearInterval(gameTimer)
+
+                    }
+                },1000)
+            }
+        }, 1000);
+    }
+
+    restartButtonAfterMatch.addEventListener('click', function () {
+        location.reload()
+    })
+    saveMatch.addEventListener('click', function () {
+        location.reload()
+    })
+
+    function endGame() {
+        clearInterval(gameTimer)
+        afterMatchScreen.style.display = 'block'
+        gameplay.style.display = 'none'
+        afterMatchUsername.textContent = `Username: ${usernameInput.value}`;
+        afterMatchCountry.textContent = userCountry
+        afterMatchScore.textContent = score
+
+    }
 
 
 
