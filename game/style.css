@@ -1,0 +1,182 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: royalblue;
+    height: 100vh;
+}
+
+h2{
+    color: white;
+    display: flex;
+    max-width: 250px;
+
+
+}
+
+#instruction-screen {
+    background-color: #11115e;
+    text-align: start;
+    padding-left: 40px;
+    color: white;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+}
+
+#close-instruction {
+    margin-top: 5px;
+    margin-left: 320px;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
+#username{
+    width: 250px;
+    height: 40px;
+    border: solid white 2px;
+    background-color: #11115e;
+    border-radius: 10px;
+    color: white;
+
+}
+
+input::placeholder{
+
+    color: white;
+}
+
+select {
+    margin-top: 10px;
+    width: 250px;
+    height: 40px;
+    border: solid white 2px;
+    background-color: #11115e;
+    border-radius: 10px;
+    color: white;
+}
+#play-button {
+    width: 150px;
+    height: 40px;
+    background-color: #c433ff;
+    color: white;
+    border-radius: 10px;
+}
+#instruction-button {
+    color: #11115e;
+    background-color: yellow;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+button[disabled]{
+    opacity: 40%;
+}
+
+#countdown-number {
+    color: white;
+}
+
+input {
+
+}
+
+#game-display {
+    display: flex;
+    justify-content: center;
+    width: 1070px;
+    height: 600px;
+    background: url("./Sprites/background1.jpg");
+    background-size: cover;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+#username-in-game {
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(57, 68, 68, 0.70);
+    width: 100px;
+    height: 20px;
+}
+
+
+#match-score {
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(57, 68, 68, 0.70);
+    width: 100px;
+    height: 20px;
+}
+
+#score-display-user {
+    background-color: rgb(21, 56, 113);
+    width: 60px;
+    height: 70px;
+    align-items: center;
+    padding-left: 40px;
+}
+
+#score-display-oppeneant {
+    background-color: rgb(21, 56, 113);
+    width: 60px;
+    height: 70px;
+    align-items: center;
+    padding-left: 40px;
+
+}
+
+#pause-screen {
+    position: absolute;
+    background-color: rgb(21, 56, 113);
+    width: 250px;
+    height: 100px;
+    border-radius: 4px;
+    color: white;
+}
+
+#countdown-screen {
+    position: absolute;
+}
+
+#goal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+
+}
+#opponent-goal {
+    transform: scaleX(-1);
+    margin-right: 60px;
+}
+
+#user-goal {
+    margin-left: 60px;
+}
+
+#time-number {
+
+}
+
+#timer {
+
+    color: rgb(21, 56, 113);
+
+}
+
+#after-match {
+    background-color: rgb(21, 56, 113);  ;
+    border-radius: 4px;
+    color: white;
+    height: 250px;
+}
+
+
+

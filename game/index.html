@@ -8,7 +8,101 @@
 </head>
 <body>
 
+<div id="welcome-screen">
 
-<script src="Script.js"></script>
+    <h2><img src="./Sprites/Ball%2002.png" height="70px" width="70px">WORLD HEAD FOOTBALL</h2>
+    <input id="username" placeholder="Input username">
+    <div></div>
+    <div id="ball-skin-select">
+        <label><input type="radio" name="ball" value="ball1" checked><img src="./Sprites/Ball%2001.png"alt="ball1" width="50px" height="50px"></label>
+        <label ><input type="radio" name="ball" value="ball2"><img src="./Sprites/Ball%2002.png" alt="ball2" width="50px" height="50px"></label>
+
+    </div>
+    <div></div>
+    <select id="select-country">
+        <option value="Character 01 - Brazil" >select country</option>
+        <option value="Character 01 - Brazil">Brazil</option>
+        <option value="Character 02 - England">England</option>
+        <option value="Character 07 - Germany">Germany</option>
+        <option value="Character 08 - Italy">Italy</option>
+        <option value="Character 04 - Japan"> Japan</option>
+        <option value="Character 05 - Netherlands"> Netherlands</option>
+        <option value="Character 06 - Portugal">Portugal</option>
+        <option value="Character 03 - Spain">Spain</option>
+    </select>
+    <div></div>
+    <select id="select-oppenent-country">
+        <option value="Character 01 - Brazil" >select country</option>
+        <option value="Character 01 - Brazil">Brazil</option>
+        <option value="Character 02 - England">England</option>
+        <option value="Character 07 - Germany">Germany</option>
+        <option value="Character 08 - Italy">Italy</option>
+        <option value="Character 04 - Japan"> Japan</option>
+        <option value="Character 05 - Netherlands"> Netherlands</option>
+        <option value="Character 06 - Portugal">Portugal</option>
+        <option value="Character 03 - Spain">Spain</option>
+    </select>
+    <div></div>
+    <select id="select-level">
+        <option value="easy">easy</option>
+        <option value="medium">medium</option>
+        <option value="hard">hard</option>
+    </select>
+    <div></div>
+    <button id="play-button" disabled>Play Game</button>
+    <button id="instruction-button">Instruction</button>
+</div>
+
+<div id="instruction-screen">
+    <button id="close-instruction">X</button>
+    <h3>HOW TO PLAY GAME</h3>
+    <p>1. input username</p>
+    <p>2. Move Character to bounce ball</p>
+    <p>3. get high score and win</p>
+    <p>4. enjoy!</p>
+</div>
+
+
+<div  id="game-display" class="screen-gameplay" style="display: none">
+    <div id="navbar" >
+        <h4 id="username-in-game">Username</h4>
+        <img id="user-flag " src="./Sprites/Flag/Brazil.png" width="130px" height="100px">
+        <h2 id="score-display-user">0</h2>
+        <h2 id="score-display-oppeneant">0</h2>
+        <img id="opponent-flag" src="./Sprites/Flag/Brazil.png" width="130px" height="100px">
+        <h4 id="match-score">Match history</h4>
+    </div>
+    <div id="time-display">
+        <h4 id="timer">TIMER</h4>
+        <h3 id="time-number" style="color: red"></h3>
+    </div>
+    <img id="ball" src="./Sprites/Ball%2002.png" width="50px" height="50px" style="position: absolute">
+
+
+    <div id="goal">
+        <img id="user-goal" src="./Sprites/Goal%20-%20Side.png" height="200px" width="100px">
+        <img id="opponent-goal" src="./Sprites/Goal%20-%20Side.png" height="200px" width="100px">
+    </div>
+
+</div>
+
+<div id="countdown-screen">
+    <h4 id="countdown-number"></h4>
+</div>
+
+<div id="pause-screen" style="display: none">
+    <h4> Game Pause</h4>
+    <button id="continue-game">Continue</button>
+    <button id="restart-game">restart</button>
+</div>
+
+<div id="after-match" style="display: none">
+    <h4 id="username-after-match"> username</h4>
+    <h4 id="score-after-match"> 100</h4>
+    <h4 id="country-after-match">Brazil</h4>
+    <button id="save-match-button">Save history Match</button>
+    <button id="restart-button-after-match">Restart Button</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
