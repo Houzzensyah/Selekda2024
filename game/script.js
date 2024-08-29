@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveMatch = document.getElementById('save-match-button');
     const userFlag = document.getElementById('user-flag');
     const oppFlag = document.getElementById('opponent-flag');
+    const ball = document.getElementById('ball')
+    const ballSkinSelect = document.getElementsByName('ball')
 
 
     let score = 0;
@@ -38,15 +40,32 @@ document.addEventListener('DOMContentLoaded', function () {
     let userCharacter = 'Character 01 - brazil'
     let oppCharacter = 'Character 01 - brazil'
     let timeRemaining;
+    let ballSkin = 'ball1'
 
 
 
+    ballSkinSelect.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if(this.checked) {
+                ballSkin = `./Sprites/${ball}.png`
+                ball.src = `./Sprites/${ball}.png`
+            }
+        })
+    })
 
     usernameInput.addEventListener('input', function () {
         usernameDisplay.textContent = usernameInput.value
         playButton.disabled = usernameInput.value.trim() === '';
     });
 
+
+    if(userCountry === oppenentCountry) {
+
+    }
+
+    function randomCountry() {
+
+    }
 
     selectCountry.addEventListener('change', function () {
         userCountry = this.value;
@@ -239,6 +258,87 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return avatar;
     }
+    function updateFrame(avatar) {
+        const frame = (avatar.currentFrame < 10 ? '0' : '') + avatar.currentFrame;
+        avatar.el.src = `./sprites/Characters/${avatar.character}/${avatar.stateName}/${avatar.stateName}_0${frame}.png`;
+    }
+
+    function runAnimation(avatar) {
+        avatar.animationInterval = setInterval(() => {
+            avatar.currentFrame++;
+            if (avatar.currentFrame > avatar.states[avatar.stateName].maxFrame) {
+                avatar.currentFrame = 0;
+            }
+            updateFrame(avatar);
+        }, 50);
+    }
+
+    function updatePosition(avatar) {
+        if (avatar.movement.isMoving) {
+            avatar.x += (avatar.movement.direction === 'forward' ? avatar.speed : -avatar.speed);
+        }
+        avatar.el.style.left = avatar.x + 'px';
+        avatar.el.style.top = avatar.y + 'px';
+        requestAnimationFrame(() => updatePosition(avatar));
+    }
+
+    function changeState(avatar, state) {
+        avatar.stateName = state;
+        avatar.currentFrame = 0;
+    }
+
+    function moveForward(avatar) {
+        if (!avatar.movement.isMoving) {
+            avatar.movement.isMoving = true;
+            avatar.movement.direction = 'forward';
+            changeState(avatar, 'Move Forward');
+        }
+    }
+
+    function moveBackward(avatar) {
+        if (!avatar.movement.isMoving) {
+            avatar.movement.isMoving = true;
+            avatar.movement.direction = 'backward';
+            changeState(avatar, 'Move Backward');
+        }
+    }
+
+    function idle(avatar) {
+        avatar.movement.isMoving = false;
+        changeState(avatar, 'Idle');
+    }
+
+    function jump(avatar) {
+        if (!avatar.jumping.isJumping) {
+            avatar.jumping.isJumping = true;
+            avatar.jumping.initY = avatar.y;
+            changeState(avatar, 'Jump');
+            const jumpHeight = 15;
+            const jumpDuration = 500;
+            const jumpInterval = setInterval(() => {
+                avatar.y -= 10;
+            }, jumpDuration / jumpHeight);
+            setTimeout(() => {
+                clearInterval(jumpInterval);
+                const fallInterval = setInterval(() => {
+                    avatar.y += 10;
+                    if (avatar.y >= avatar.jumping.initY) {
+                        clearInterval(fallInterval);
+                        avatar.y = avatar.jumping.initY;
+                        avatar.jumping.isJumping = false;
+                        idle(avatar);
+                    }
+                }, jumpDuration / jumpHeight);
+            }, jumpDuration);
+        }
+    }
+
+    function kick(avatar) {
+        changeState(avatar, 'Kick');
+        setTimeout(() => idle(avatar), 500);
+    }
+
+
 
 
 
