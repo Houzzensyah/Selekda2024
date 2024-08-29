@@ -178,5 +178,23 @@ input {
     height: 250px;
 }
 
+@keyframes moveBall {
+    from {
+        top: 30px; /* Adjust as necessary */
+    }
+    to {
+        top: calc(80vh - 80px); /* Adjust as necessary */
+    }
+}
 
-
+#ball {
+    position: absolute;
+    top: 50px; /* Adjust as necessary */
+    left: calc(50% - 50px); /* Adjust as necessary */
+    width: 100px; /* Adjust as necessary */
+    height: 100px; /* Adjust as necessary */
+    animation: moveBall 5s linear; /* Adjust duration as necessary */
+}
+#ball.animate {
+    animation: moveBall 5s linear forwards;
+}
