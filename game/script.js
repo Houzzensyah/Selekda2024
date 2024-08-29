@@ -56,9 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    if(userCountry === oppenentCountry) {
-
-    }
 
     function randomCountry() {
 
