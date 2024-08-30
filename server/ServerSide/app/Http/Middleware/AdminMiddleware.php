@@ -18,7 +18,7 @@ class AdminMiddleware
 
         if(!$request->user() || !$request->user()->tokenCan('role:admin')){
             return \response()->json([
-                'status' => 'Forbidden',
+                'status' => 'forbidden',
                 'message' => 'You are not admin!'
             ],403);
         }

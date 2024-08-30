@@ -19,7 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->renderable(function (\Illuminate\Validation\ValidationException $exception) {
             return response()->json([
-               'status' => 'invalid'
-            ]);
-        } );
+                "status"=> "invalid",
+                "message"=> "Request body is not valid",
+                'violations' => collect($exception->errors())->map(function ($error) {
+                  return [
+                      'message' => collect($error)->join('')
+                  ]  ;
+                })
+            ],400);
+        });
     })->create();
