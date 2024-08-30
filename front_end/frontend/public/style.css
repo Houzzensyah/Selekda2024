@@ -472,3 +472,68 @@ body {
         display: none;
     }
 }
+.nav-button {
+    width: 100%;
+    background-color: #f7d5d5;
+    border: none;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+}
+
+.nav-button:hover {
+    background-color: #f5b5b5;
+}
+
+.main-content {
+    width: 80%;
+    background-color: #f2c7c7;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 50%;
+    font-size: 16px;
+}
+
+.admin-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+
+.chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chart:nth-child(3) {
+    grid-column: span 2;
+}
