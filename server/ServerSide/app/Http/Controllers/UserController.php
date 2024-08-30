@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function updateProfile(Request $request)
+    public function update(Request $request, $id)
     {
-        $user = Auth::user();  // Fetches the currently authenticated user
+        $user = User::findOrFail($id);
 
         $params = $request->validate([
             'name' => ['sometimes', 'required'],
@@ -31,7 +32,7 @@ class UserController extends Controller
             $params['password'] = Hash::make($params['password']);
         }
 
-        $user->update($params);  // Updates the authenticated user's record
+        $user->update($params);
 
         return response()->json([
             'status' => 'success',
@@ -39,8 +40,14 @@ class UserController extends Controller
         ], 200);
     }
 
+
     public function getUserProfile()
     {
+        $user = Auth::user();
 
+        return response()->json([
+            'status' => 'success',
+            'user' => $user,
+        ], 200);
     }
 }
