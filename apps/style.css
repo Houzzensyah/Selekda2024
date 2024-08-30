@@ -95,6 +95,114 @@ button:hover {
     height: 400px;
     overflow: hidden;
     margin-left: -200px;
+}
 
+/* Tool Properties Styling */
+#tool-properties {
+    position: absolute;
+    top: 0;
+    left: 160px;
+    width: 250px;
+    height: 100%;
+    background-color: #2e2e2e;
+    padding: 10px;
+    overflow-y: auto;
+}
 
+.workspace-header {
+    padding: 10px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.work-area {
+    width: calc(100% - 150px);
+    height: calc(100% - 40px);
+    background-color: #ffffff;
+    margin-left: 150px;
+    position: relative;
+}
+
+canvas {
+    background-color: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
+
+#finish-edit {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Layer Stack */
+#layer-stack {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#layers-list {
+    list-style: none;
+    padding: 0;
+}
+
+#layers-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #444;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+#layer-controls {
+    margin-top: 20px;
+}
+
+#layer-adjustments {
+    margin-top: 10px;
+}
+
+#layer-adjustments label {
+    display: block;
+    margin-top: 10px;
+}
+
+#zoom-controls {
+    display: flex;
+    align-items: center;
+}
+
+#zoom-controls button {
+    width: 30px;
+    height: 30px;
+    background-color: #444;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 0 5px;
 }
