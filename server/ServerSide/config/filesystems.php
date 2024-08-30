@@ -58,6 +58,34 @@ return [
 
     ],
 
+    'profile_pictures' => [
+        'driver' => 'local',
+        'root' => storage_path('app/public/profile_pictures'),
+        'url' => env('APP_URL') . '/storage/profile_pictures',
+        'visibility' => 'public',
+    ],
+
+    'banner_images' => [
+        'driver' => 'local',
+        'root' => storage_path('app/public/banner_images'),
+        'url' => env('APP_URL') . '/storage/banner_images',
+        'visibility' => 'public',
+    ],
+
+    'blog_images' => [
+        'driver' => 'local',
+        'root' => storage_path('app/public/blog_images'),
+        'url' => env('APP_URL') . '/storage/blog_images',
+        'visibility' => 'public',
+    ],
+
+    'portfolio_images' => [
+        'driver' => 'local',
+        'root' => storage_path('app/public/portfolio_images'),
+        'url' => env('APP_URL') . '/storage/portfolio_images',
+        'visibility' => 'public',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Symbolic Links
