@@ -33,9 +33,9 @@ Route::prefix('v1')->middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::delete('portfolios/{id}', [\App\Http\Controllers\PortfolioController::class, 'destroy']);
 
     //user admin control
-    Route::get('users', [\App\Http\Controllers\UserAdminController::class, 'index']);
+    Route::get('users/admin', [\App\Http\Controllers\UserAdminController::class, 'index']);
     Route::post('users', [\App\Http\Controllers\UserAdminController::class, 'store']);
-    Route::put('users/{id}', [\App\Http\Controllers\UserAdminController::class, 'update']);
+    Route::put('users/{id}/admin', [\App\Http\Controllers\UserAdminController::class, 'update']);
     Route::delete('users/{id}', [\App\Http\Controllers\UserAdminController::class, 'destroy']);
 });
 

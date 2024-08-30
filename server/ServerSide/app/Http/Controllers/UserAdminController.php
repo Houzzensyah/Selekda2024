@@ -87,6 +87,6 @@ class UserAdminController extends Controller
         $users->delete();
         return response()->json([
             'status' => 'success',
-        ],200);
+        ],204);
     }
 }
