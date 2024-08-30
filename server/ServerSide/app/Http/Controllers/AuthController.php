@@ -26,6 +26,7 @@ class AuthController extends Controller
             $params['profile_picture'] = $path;
         }
 
+        $params['password'] = Hash::make($params['password']);
         $user = User::create($params);
 
         $token = $user->createToken('token', ['role:user'])->plainTextToken;
