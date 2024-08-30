@@ -1,16 +1,22 @@
 <template>
-
   <div class="container">
     <div class="form-container">
       <h2>Login</h2>
-      <form action="/auth/login" method="POST">
+      <form @submit.prevent="login">
+        <div v-if="errors.length" class="alert alert-danger" role="alert">
+          <ul>
+            <li v-for="(error, index) in errors" :key="index">
+              <strong>{{ error.field }}</strong>: {{ error.message }}
+            </li>
+          </ul>
+        </div>
         <div class="form-group">
           <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required>
+          <input type="text" id="username" name="username" v-model="username" required>
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="password" v-model="password" required>
         </div>
         <button type="submit">Login</button>
       </form>
@@ -19,6 +25,47 @@
   </div>
 
 </template>
+
+<script setup>
+import {ref} from "vue";
+import {useRouter} from "vue-router";
+import axios from "axios";
+
+const username = ref('');
+const password = ref('')
+const errors = ref([]);
+const router = useRouter();
+
+
+const login = () => {
+  axios.post('http://127.0.0.1:8000/api/v1/auth/login', {
+    username: username.value,
+    password: password.value
+  }).then((response) => {
+    const {token, role} = response.data;
+    localStorage.setItem('token', token);
+    localStorage.setItem('role', role);
+
+    if(role === 'admin'){
+      router.push('/admin')
+    }else{
+      router.push('/')
+    }
+
+  }).catch(err => {
+    errorMes(err)
+  })
+}
+
+function errorMes(error){
+  errors.value = error.response?.data?.violations
+      ? Object.entries(error.response.data.violations).map(([field, {message}]) => ({field,message}))
+      :[{field : 'errors', message : error.response?.data?.message}]
+}
+
+</script>
+
+
 
 <style>
 body {
