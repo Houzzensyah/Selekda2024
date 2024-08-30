@@ -45,7 +45,7 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('username', $params['username'])->first();
-        if(Hash::check($params['password'], $user->password)) {
+        if($user && Hash::check($params['password'], $user->password)) {
             $token = $user->createToken('token', ['role:user'])->plainTextToken;
             return response()->json([
                 "status"=>"success",
@@ -55,7 +55,7 @@ class AuthController extends Controller
         }
 
         $admin = Admin::where('username', $params['username'])->first();
-        if(Hash::check($params['password'], $admin->password)) {
+        if($admin && Hash::check($params['password'], $admin->password)) {
             $token = $admin->createToken('token', ['role:admin'])->plainTextToken;
             return response()->json([
                 "status"=>"success",

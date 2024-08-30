@@ -24,7 +24,6 @@ class BannerController extends Controller
             'image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
             'description' => ['nullable'],
             'status' => ['required', 'in:active,inactive'],
-            'date' => ['required', 'date'],
         ]);
 
         $params['image'] = $request->file('image')->store('banner_images', 'public');
@@ -46,11 +45,11 @@ class BannerController extends Controller
             'image' => ['nullable', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
             'description' => ['nullable'],
             'status' => ['sometimes', 'required', 'in:active,inactive'],
-            'date' => ['sometimes', 'required', 'date'],
+
         ]);
 
-        if ($request->hasFile('banner_image')) {
-            $params['banner_image'] = $request->file('banner_image')->store('banner_images', 'public');
+        if ($request->hasFile('image')) {
+            $params['image'] = $request->file('banner_image')->store('banner_images', 'public');
         }
 
         $banner->update($params);
@@ -64,6 +63,12 @@ class BannerController extends Controller
     public function destroy( $id)
     {
         $banner = Banner::findOrFail($id);
+        if(!$banner) {
+            return response()->json([
+                'status' => 'not-found',
+                'message'  => 'Not Found'
+            ],404);
+        }
         $banner->delete();
 
         return response()->json([

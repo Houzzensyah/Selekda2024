@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogComment;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 
 class BlogCommentController extends Controller
@@ -26,9 +27,10 @@ class BlogCommentController extends Controller
             'website' => ['nullable'],
             'comment' => ['required'],
             'captcha' => ['nullable'],
-            'date' => ['required', 'date'],
+
         ]);
 
+        $params['user_id'] = \auth()->user()->id;
         $comment = BlogComment::create($params);
 
         return response()->json([
@@ -62,6 +64,12 @@ class BlogCommentController extends Controller
     public function destroy($id)
     {
         $comment = BlogComment::findOrFail($id);
+        if(!$comment) {
+            return response()->json([
+                'status' => 'not-found',
+                'message'  => 'Not Found'
+            ],404);
+        }
         $comment->delete();
 
         return response()->json([

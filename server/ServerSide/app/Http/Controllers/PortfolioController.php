@@ -62,6 +62,12 @@ class PortfolioController extends Controller
     public function destroy($id)
     {
         $portfolio = Portfolio::findOrFail($id);
+        if(!$portfolio) {
+            return response()->json([
+                'status' => 'not-found',
+                'message'  => 'Not Found'
+            ],404);
+        }
         $portfolio->delete();
 
         return response()->json([

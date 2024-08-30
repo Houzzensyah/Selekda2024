@@ -78,7 +78,12 @@ class UserAdminController extends Controller
     public function destroy($id)
     {
         $users = User::findOrFail($id);
-
+        if(!$users) {
+            return response()->json([
+                'status' => 'not-found',
+                'message'  => 'Not Found'
+            ],404);
+        }
         $users->delete();
         return response()->json([
             'status' => 'success',

@@ -28,4 +28,18 @@ return Application::configure(basePath: dirname(__DIR__))
                 })
             ],400);
         });
+        $exceptions->renderable(function (\Illuminate\Auth\AuthenticationException $exception) {
+            return response()->json([
+                "status" => "unauthenticated",
+                "message"=> 'Missing Token'
+            ],401);
+        });
+
+
+        $exceptions->renderable(function (\Illuminate\Http\Exceptions\HttpResponseException $exception){
+            return response()->json([
+                "status"=>"not-found",
+                "message"=> "Not found"
+            ],404);
+        });
     })->create();

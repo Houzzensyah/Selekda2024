@@ -21,12 +21,12 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $params = $request->validate([
-            'title' =>['required', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
-            'image' => ['required'],
+            'image' =>['required', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
+            'title' => ['required'],
             'description'  => ['required'],
             'author' =>['required'],
             'tags' => ['nullable'],
-            'date' => ['required', 'date']
+
         ]);
 
         $params['image'] = $request->file('image')->store('blog_images', 'public');
@@ -48,7 +48,7 @@ class BlogController extends Controller
             'description' => ['sometimes', 'required'],
             'author' => ['sometimes', 'required'],
             'tags' => ['nullable'],
-            'date' => ['sometimes', 'required', 'date'],
+
         ]);
 
         if ($request->hasFile('image')) {
@@ -66,6 +66,12 @@ class BlogController extends Controller
     public function destroy($id)
     {
         $blog = Blog::findOrFail($id);
+        if(!$blog) {
+            return response()->json([
+                'status' => 'not-found',
+                'message'  => 'Not Found'
+            ],404);
+        }
         $blog->delete();
 
         return response()->json([

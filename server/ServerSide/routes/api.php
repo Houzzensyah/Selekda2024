@@ -53,3 +53,10 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(function() {
 });
 
 
+Route::fallback(function () {
+    return response()->json([
+        'status' => 'not-found'
+    ],404);
+});
+
+
