@@ -38,13 +38,13 @@ class BannerController extends Controller
 
     public function update(Request $request, $id)
     {
-        $banner = Banner::findOrFail($id);
+        $banner = Banner::where('id', $id)->first();
 
         $params = $request->validate([
-            'title' => ['sometimes', 'required'],
+            'title' => ['min:4'],
             'image' => ['nullable', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
             'description' => ['nullable'],
-            'status' => ['sometimes', 'required', 'in:active,inactive'],
+            'status' => ['nullable', 'in:active,inactive'],
 
         ]);
 

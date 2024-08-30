@@ -41,7 +41,7 @@ class BlogCommentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $comment = BlogComment::findOrFail($id);
+        $comment = BlogComment::where();
 
         $params = $request->validate([
             'name' => ['sometimes', 'required'],
