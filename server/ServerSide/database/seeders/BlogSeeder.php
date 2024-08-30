@@ -35,7 +35,7 @@ class BlogSeeder extends Seeder
             'blog_title' => 'rahasia alam',
             'description' => 'panggilan alam saat lomba.',
             'author' => 'Sam Smith',
-            'tags' => 'Alam,Seru,Lomba',
+            'tags' => 'Alam,Serus,Lomba',
             'date' => now(),
         ]);
         Blog::create([
