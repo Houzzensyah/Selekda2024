@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="WT Logo">
+        </div>
+        <nav class="nav-menu">
+            <div class="hamburger-menu" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a id="news-button">News</a></li>
+                <li><a id="service-button">Services</a></li>
+                <li><a id="portfolio-button">Portfolio</a></li>
+                <li><a id="testimonial-button">Testimonials</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search!">
+            <button type="submit"><i class="search-icon"></i></button>
+        </div>
+    </header>
+<!--Landing Page-->
+    <div id="landing-page">
+    <!-- Banner Section -->
+    <section class="banner">
+        <p>This Website serves you daily news</p>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="news-card">
+            <img src="./MEDIA_FILES/IMAGES/images%20(2).png" alt="News Image 1">
+            <p>News Title</p>
+            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+        </div>
+        <div class="news-card">
+            <img src="./MEDIA_FILES/IMAGES/images%20(2).png" alt="News Image 2">
+            <p>News Title</p>
+            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+        </div>
+    </section>
+
+    </div>
+
+
+<!--Portfolio page-->
+    <div id="portfolio" style="display: none">
+        <section class="portfolio-section">
+            <h1>Portofolio</h1>
+            <div class="filter-buttons">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Category 1</button>
+                <button class="filter-btn">Category 2</button>
+                <button class="filter-btn">Category 3</button>
+            </div>
+
+            <table class="portfolio-table">
+                <tr class="portfolio-row">
+                    <td class="portfolio-image">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(2).webp" alt="Portfolio Image">
+                    </td>
+                    <td class="portfolio-details">
+                        <h2>Title</h2>
+                        <p>Short description</p>
+                        <p>By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                        <button class="detail-btn">View Detail</button>
+                    </td>
+                </tr>
+                <tr class="portfolio-row">
+                    <td class="portfolio-image">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(4).webp" alt="Portfolio Image">
+                    </td>
+                    <td class="portfolio-details">
+                        <h2>Title</h2>
+                        <p>Short description</p>
+                        <p>By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                        <button class="detail-btn">View Detail</button>
+                    </td>
+                </tr>
+                <tr class="portfolio-row">
+                    <td class="portfolio-image">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(13).jpg" alt="Portfolio Image">
+                    </td>
+                    <td class="portfolio-details">
+                        <h2>Title</h2>
+                        <p>Short description</p>
+                        <p>By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                        <button class="detail-btn">View Detail</button>
+                    </td>
+                </tr>
+                <tr class="portfolio-row">
+                    <td class="portfolio-image">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(12).jpg" alt="Portfolio Image">
+                    </td>
+                    <td class="portfolio-details">
+                        <h2>Title</h2>
+                        <p>Short description</p>
+                        <p>By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                        <button class="detail-btn">View Detail</button>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        </section>
+    </div>
+
+<!--    Blog Page-->
+    <div id="blog" style="display: none">
+        <section class="blog-section">
+            <h1>Blog Posts</h1>
+            <div class="blog-container">
+                <div class="blog-content">
+                    <div class="blog-post">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(1).jpg" alt="Blog Image" class="blog-image">
+                        <div class="blog-details">
+                            <h2 id="blog-page">Blog Title</h2>
+                            <p>Lorem ipsum Sed ut perspiciatis unde omnis iste natus error sit</p>
+                            <p>By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                        </div>
+                    </div>
+
+                    <div class="blog-post">
+                        <img src="./MEDIA_FILES/IMAGES/images%20(4).jpg" alt="Blog Image" class="blog-image">
+                        <div class="blog-details">
+                            <h2 id="blog-page2">Blog Title</h2>
+                            <p>Lorem ipsum Sed ut perspiciatis unde omnis iste natus error sit</p>
+                            <p>By Carter on 19 Aug 24 | Views: 15994 | Comments: 124</p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li>Categories 1</li>
+                            <li>Categories 2</li>
+                            <li>Categories 3</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Popular Post</h3>
+                        <ul>
+                            <li>Popular Blog 1</li>
+                            <li>Popular Blog 2</li>
+                            <li>Popular Blog 3</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Tag Cloud</h3>
+                        <div class="tags">
+                            <span class="tag">Tag 1</span>
+                            <span class="tag">Tag 2</span>
+                            <span class="tag">Tag 3</span>
+                            <span class="tag">Tag 4</span>
+                            <span class="tag">Tag 5</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </div>
+<!--Blog Detail-->
+    <div id="blog-detail" style="display: none">
+        <div class="blog-content-detail">
+            <img src="./MEDIA_FILES/IMAGES/images%20(14).jpg" alt="Blog Image" class="blog-image">
+            <div class="blog-details-form">
+                <h2 class="blog-title">Blog Title</h2>
+                <p class="blog-meta">By Wolpis on 22 Aug 24 | Views: 1234 | Comments: 10</p>
+                <p class="blog-description">
+                    Detail Of Blog Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                </p>
+            </div>
+        </div>
+
+        <div class="comment-section">
+            <div class="comment">
+                <img src="./MEDIA_FILES/IMAGES/images%20(7).webp" alt="User Avatar" class="user-avatar">
+                <div class="comment-details-form">
+                    <h3 class="user-name">Suis</h3>
+                    <p class="comment-meta">posted on 25 Aug 24</p>
+                    <p class="comment-text">This is user comment. It adds more discussion to the topic</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment-form-section">
+            <h3>Leave Your Comment!</h3>
+            <form action="#" class="comment-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Your Comment</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="captcha">Solve This: 4 * 2 =</label>
+                    <input type="text" id="captcha" name="captcha" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© Designed By : Houzzensyah</p>
+        <div class="social-icons">
+            <a href="#"><img src="./MEDIA_FILES/SOCIAL_MEDIA/Black%20and%20White/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="./MEDIA_FILES/SOCIAL_MEDIA/Black%20and%20White/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="./MEDIA_FILES/SOCIAL_MEDIA/Black%20and%20White/twitter.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
