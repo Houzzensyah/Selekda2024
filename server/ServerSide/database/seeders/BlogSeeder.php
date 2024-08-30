@@ -20,31 +20,31 @@ class BlogSeeder extends Seeder
             'description' => 'In this blog post, we discuss why SEO is crucial for your business.',
             'author' => 'John Doe',
             'tags' => 'SEO,Marketing,Business',
-            'date' => now(),
+
         ]);
         Blog::create([
-            'blog_image' => 'blog_images/post2.jpg',
-            'blog_title' => '10 Tips for Web Design',
+            'image' => 'blog_images/post2.jpg',
+            'title' => '10 Tips for Web Design',
             'description' => 'Learn the top 10 tips for designing an effective website.',
             'author' => 'Jane Smith',
             'tags' => 'Web Design,UI/UX,Development',
-            'date' => now(),
+
         ]);
         Blog::create([
-            'blog_image' => 'blog_images/post3.jpg',
-            'blog_title' => 'rahasia alam',
+            'image' => 'blog_images/post3.jpg',
+            'title' => 'rahasia alam',
             'description' => 'panggilan alam saat lomba.',
             'author' => 'Sam Smith',
-            'tags' => 'Alam,Serus,Lomba',
-            'date' => now(),
+            'tags' => 'Alam,Seru    ,Lomba',
+
         ]);
         Blog::create([
-            'blog_image' => 'blog_images/post2.jpg',
-            'blog_title' => '10 Tips for Web Design',
-            'description' => 'Learn the top 10 tips for designing an effective website.',
+            'image' => 'blog_images/post4.jpg',
+            'title' => '10 Tips for Wdeb Design',
+            'description' => 'Learn the todp 10 tips for designing an effective website.',
             'author' => 'Jane Smith',
-            'tags' => 'Web Design,UI/UX,Development',
-            'date' => now(),
+            'tags' => 'Web Design,UI/UdX,Development',
+
         ]);
     }
 }

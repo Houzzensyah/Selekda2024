@@ -18,7 +18,6 @@ class BannerSeeder extends Seeder
             'image' => 'banner_images/test.jpg',
             'description' => 'This is the main banner of our website.',
             'status' => 'active',
-            'date' => now(),
         ]);
 
         Banner::create([
@@ -26,7 +25,7 @@ class BannerSeeder extends Seeder
             'image' => 'banner_images/special_offer.jpg',
             'description' => 'Dont miss our special offer, available for a limited time.',
             'status' => 'inactive',
-            'date' => now(),
+
         ]);
     }
 }
