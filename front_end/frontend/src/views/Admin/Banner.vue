@@ -34,7 +34,7 @@
     <h3>Existing Banners</h3>
     <ul>
       <li v-for="banner in banners" :key="banner.id">
-        <img :src="`/storage/${banner.image}`" alt="Banner Image" />
+        <img :src="`http://127.0.0.1:8000/storage/${banner.image}`" alt="Banner Image" />
         <h4>{{ banner.title }}</h4>
         <p>{{ banner.description }}</p>
         <p>Status: {{ banner.status }}</p>
@@ -59,9 +59,12 @@ const bannerForm = ref({
 });
 
 const fetchBanners = () => {
-  axios.get('http://127.0.0.1:8000/api/v1/banners')
-      .then(response => {
-        banners.value = response.data.data;
+  axios.get('http://127.0.0.1:8000/api/v1/banners', {
+    headers : {
+      Authorization : 'Bearer ' + localStorage.getItem('token')
+    }
+  }).then(response => {
+        banners.value = response.data.banners;
       })
       .catch(error => {
         console.error('Error fetching banners:', error.response.data);
@@ -83,7 +86,7 @@ const submitBanner = () => {
   }
 
   const method = bannerForm.value.id ? 'put' : 'post';
-  const url = bannerForm.value.id ? `http://127.0.0.1:8000/api/v1/banners/${bannerForm.value.id}` : '/v1/banners';
+  const url = bannerForm.value.id ? `http://127.0.0.1:8000/api/v1/banners/${bannerForm.value.id}` : 'http://127.0.0.1:8000/api/v1/banners';
 
   axios({
     method,
@@ -91,6 +94,7 @@ const submitBanner = () => {
     data: formData,
     headers: {
       'Content-Type': 'multipart/form-data',
+      'Authorization' : 'Bearer ' + localStorage.getItem('token')
     },
   })
       .then(response => {
@@ -113,7 +117,11 @@ const editBanner = (banner) => {
 };
 
 const deleteBanner = (id) => {
-  axios.delete(`http://127.0.0.1:8000/api/v1/banners/${id}`)
+  axios.delete(`http://127.0.0.1:8000/api/v1/banners/${id}` , {
+    headers :{
+      Authorization : 'Bearer ' + localStorage.getItem('token')
+    }
+  })
       .then(response => {
         fetchBanners();
       })
@@ -132,7 +140,7 @@ onMounted(() => {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f6a9a9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

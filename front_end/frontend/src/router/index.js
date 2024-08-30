@@ -80,7 +80,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/user',
+      path: '/users',
       name: 'Users',
       component: Users,
       meta : {

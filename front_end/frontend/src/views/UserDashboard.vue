@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="logo">
-
+  <img src=""
     </div>
     <nav class="nav-menu">
       <div class="hamburger-menu" id="hamburger">
@@ -14,10 +14,16 @@
         <li><a id="testimonial-button">User Profile</a></li>
       </ul>
     </nav>
-
+    <div class="search-container">
+      <input type="text" placeholder="Search!">
+      <button type="submit"><i class="search-icon"></i></button>
+    </div>
   </header>
   <div id="landing-page">
     <!-- Banner Section -->
+    <section class="banner">
+      <p>This Is Website </p>
+    </section>
     <!-- News Section -->
     <section class="news-section">
       <div class="news-card">

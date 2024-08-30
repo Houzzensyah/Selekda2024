@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 30 Agu 2024 pada 13.45
+-- Waktu pembuatan: 30 Agu 2024 pada 16.26
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -69,22 +69,9 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `title`, `image`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-29 23:41:36', '2024-08-29 23:41:36'),
-(3, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-29 23:41:36', '2024-08-29 23:41:36'),
-(6, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-29 23:42:16', '2024-08-29 23:42:16'),
-(7, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-29 23:42:16', '2024-08-29 23:42:16'),
-(8, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-29 23:42:31', '2024-08-29 23:42:31'),
-(9, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-29 23:42:31', '2024-08-29 23:42:31'),
-(10, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(11, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(12, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(13, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(14, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(15, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(16, 'Welcome to Our Website', 'banner_images/test.jpg', 'This is the main banner of our website.', 'active', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
-(17, 'Special Offer!', 'banner_images/special_offer.jpg', 'Dont miss our special offer, available for a limited time.', 'inactive', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
 (18, 'New Banner', 'banner_images/o6lTNx0H5J2yh54e46jiAKNhzgu6DL3Yc28ftTJH.png', 'Banner description', 'active', '2024-08-30 00:56:25', '2024-08-30 00:56:25'),
-(19, 'New Banner', 'banner_images/RaVlNDws9VhvxLebnQLhEQYVkkWzJHbAanSilona.png', 'Banner description', 'active', '2024-08-30 03:40:54', '2024-08-30 03:40:54');
+(19, 'New Banner', 'banner_images/RaVlNDws9VhvxLebnQLhEQYVkkWzJHbAanSilona.png', 'Banner description', 'active', '2024-08-30 03:40:54', '2024-08-30 03:40:54'),
+(20, 'dsadasdsad', 'banner_images/041vOfu3VBloo7b2vcI8R9f0OaY8FCVbMtnt73mo.jpg', 'dasddsad', 'active', '2024-08-30 06:59:07', '2024-08-30 06:59:07');
 
 -- --------------------------------------------------------
 
@@ -108,26 +95,11 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `image`, `description`, `author`, `tags`, `created_at`, `updated_at`) VALUES
-(2, 'The Importance of SEO', 'blog_images/post1.jpg', 'In this blog post, we discuss why SEO is crucial for your business.', 'John Doe', 'SEO,Marketing,Business', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(3, '10 Tips for Web Design', 'blog_images/post2.jpg', 'Learn the top 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UX,Development', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(4, 'rahasia alam', 'blog_images/post3.jpg', 'panggilan alam saat lomba.', 'Sam Smith', 'Alam,Seru    ,Lomba', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(5, '10 Tips for Wdeb Design', 'blog_images/post4.jpg', 'Learn the todp 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UdX,Development', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(6, 'The Importance of SEO', 'blog_images/post1.jpg', 'In this blog post, we discuss why SEO is crucial for your business.', 'John Doe', 'SEO,Marketing,Business', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(7, '10 Tips for Web Design', 'blog_images/post2.jpg', 'Learn the top 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UX,Development', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(8, 'rahasia alam', 'blog_images/post3.jpg', 'panggilan alam saat lomba.', 'Sam Smith', 'Alam,Seru    ,Lomba', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(9, '10 Tips for Wdeb Design', 'blog_images/post4.jpg', 'Learn the todp 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UdX,Development', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(10, 'The Importance of SEO', 'blog_images/post1.jpg', 'In this blog post, we discuss why SEO is crucial for your business.', 'John Doe', 'SEO,Marketing,Business', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(11, '10 Tips for Web Design', 'blog_images/post2.jpg', 'Learn the top 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UX,Development', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(12, 'rahasia alam', 'blog_images/post3.jpg', 'panggilan alam saat lomba.', 'Sam Smith', 'Alam,Seru    ,Lomba', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(13, '10 Tips for Wdeb Design', 'blog_images/post4.jpg', 'Learn the todp 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UdX,Development', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(14, 'The Importance of SEO', 'blog_images/post1.jpg', 'In this blog post, we discuss why SEO is crucial for your business.', 'John Doe', 'SEO,Marketing,Business', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
-(15, '10 Tips for Web Design', 'blog_images/post2.jpg', 'Learn the top 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UX,Development', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
-(16, 'rahasia alam', 'blog_images/post3.jpg', 'panggilan alam saat lomba.', 'Sam Smith', 'Alam,Seru    ,Lomba', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
-(17, '10 Tips for Wdeb Design', 'blog_images/post4.jpg', 'Learn the todp 10 tips for designing an effective website.', 'Jane Smith', 'Web Design,UI/UdX,Development', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
 (18, 'New Blog', 'blog_images/tbVTNal0EhVIscGR5KxabvlozBu24zB3oqQ8vzOI.png', 'Blog description', 'John Doe', 'SEO,Marketing', '2024-08-30 01:03:22', '2024-08-30 01:03:22'),
 (19, 'New Blog', 'blog_images/BsuSFvvcjpIIpderFHqWELk1P3yNr2cgER6phxhh.png', 'Blog description', 'John Doe', 'SEO,Marketing', '2024-08-30 04:01:22', '2024-08-30 04:01:22'),
 (20, 'New Blog', 'blog_images/ccWax5oR6tjITT7TVmC1J9ak7sFGzgiki3eEZpXl.png', 'Blog description', 'John Doe', 'SEO,Marketing', '2024-08-30 04:01:31', '2024-08-30 04:01:31'),
-(21, 'New Blog', 'blog_images/CL4rE2yW7GxlSdmSeTUB5SI3rcbGYvvwBXeAGnol.png', 'Blog descriptionss', 'John Doe', 'SEO,Marketing', '2024-08-30 04:01:36', '2024-08-30 04:01:36');
+(21, 'New Blog', 'blog_images/CL4rE2yW7GxlSdmSeTUB5SI3rcbGYvvwBXeAGnol.png', 'Blog descriptionss', 'John Doe', 'SEO,Marketing', '2024-08-30 04:01:36', '2024-08-30 04:01:36'),
+(22, 'asdasddasd', 'blog_images/p2Wn1cr4SMpa4radjpdPJCSCeX535vUx5HzNMxNP.jpg', 'saddsa', 'dasdsadad', 'sdadsad', '2024-08-30 07:09:50', '2024-08-30 07:09:50');
 
 -- --------------------------------------------------------
 
@@ -266,9 +238,18 @@ CREATE TABLE `personal_access_tokens` (
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
 (1, 'App\\Models\\User', 3, 'token', '36e3ebc7f66b3b2d8e8cb7fb00a2eb433ed1b2051f4c7015f229f61d39d7e38f', '[\"role:user\"]', NULL, NULL, '2024-08-30 00:43:25', '2024-08-30 00:43:25'),
-(3, 'App\\Models\\Admin', 2, 'token', 'eadf5f221c40ae5c62e8114bb78e2dffa571e625a258a5208bd4a7c2fe476494', '[\"role:admin\"]', '2024-08-30 04:31:58', NULL, '2024-08-30 00:54:02', '2024-08-30 04:31:58'),
+(3, 'App\\Models\\Admin', 2, 'token', 'eadf5f221c40ae5c62e8114bb78e2dffa571e625a258a5208bd4a7c2fe476494', '[\"role:admin\"]', '2024-08-30 07:20:45', NULL, '2024-08-30 00:54:02', '2024-08-30 07:20:45'),
 (4, 'App\\Models\\User', 5, 'token', '7c6a5904e1c4afd27a083f7aaa3b12bad705a6d18949174c15f6d796a70e9a45', '[\"role:user\"]', NULL, NULL, '2024-08-30 01:07:08', '2024-08-30 01:07:08'),
-(5, 'App\\Models\\User', 3, 'token', 'a220481515944d3ab030e1c46ab3f7a3a00ec9fac7156121b658e5e3593fc1ae', '[\"role:user\"]', '2024-08-30 04:44:13', NULL, '2024-08-30 01:08:51', '2024-08-30 04:44:13');
+(5, 'App\\Models\\User', 3, 'token', 'a220481515944d3ab030e1c46ab3f7a3a00ec9fac7156121b658e5e3593fc1ae', '[\"role:user\"]', '2024-08-30 04:44:13', NULL, '2024-08-30 01:08:51', '2024-08-30 04:44:13'),
+(6, 'App\\Models\\User', 6, 'token', '69868e6ce03a0b7e6a04c9c7c28a6347529ee41113a7a22c95f0eb0fb61c04a2', '[\"role:user\"]', NULL, NULL, '2024-08-30 05:46:22', '2024-08-30 05:46:22'),
+(7, 'App\\Models\\User', 7, 'token', '511b5404cca41c434c3a0639e1534579db9806e561ee07a21afc093cf7b4b9cc', '[\"role:user\"]', NULL, NULL, '2024-08-30 05:50:42', '2024-08-30 05:50:42'),
+(8, 'App\\Models\\User', 7, 'token', '233dc312f00caac8a4fa265f0f0807bce31d1bbb59b6e5c96052bb9637f98d77', '[\"role:user\"]', NULL, NULL, '2024-08-30 05:50:47', '2024-08-30 05:50:47'),
+(9, 'App\\Models\\User', 7, 'token', '0f609f9f26c09493f7b5f627a1ff68881b63c63fb3111a0f80da3efbab52deed', '[\"role:user\"]', NULL, NULL, '2024-08-30 05:50:51', '2024-08-30 05:50:51'),
+(10, 'App\\Models\\User', 7, 'token', '7bcc1d9318a6dd6e4f82bb694226cfad83dfa8ba2775d60839642a9190eb30eb', '[\"role:user\"]', NULL, NULL, '2024-08-30 05:52:09', '2024-08-30 05:52:09'),
+(11, 'App\\Models\\Admin', 2, 'token', 'ccb899a5a8f780bc4248879a89ac3dbae8ce13b3e9fcbb317db1adf1bb28d088', '[\"role:admin\"]', '2024-08-30 07:22:55', NULL, '2024-08-30 05:59:14', '2024-08-30 07:22:55'),
+(12, 'App\\Models\\User', 8, 'token', '2067bee0921865614bac02f58e7cf96802e4186a60b6c56febaa938b3726277b', '[\"role:user\"]', NULL, NULL, '2024-08-30 07:21:55', '2024-08-30 07:21:55'),
+(13, 'App\\Models\\Admin', 2, 'token', 'a97e79856acb53994caf2ddffc05f56167fe54b6b0c275a11dea62a06a98fb08', '[\"role:admin\"]', NULL, NULL, '2024-08-30 07:23:14', '2024-08-30 07:23:14'),
+(14, 'App\\Models\\User', 7, 'token', 'f2c58b4642fdcda2ba8998a39d1b759b1e762304e5fc344826e221c640c66a68', '[\"role:user\"]', NULL, NULL, '2024-08-30 07:23:32', '2024-08-30 07:23:32');
 
 -- --------------------------------------------------------
 
@@ -291,15 +272,9 @@ CREATE TABLE `portfolios` (
 --
 
 INSERT INTO `portfolios` (`id`, `title`, `image`, `description`, `author`, `created_at`, `updated_at`) VALUES
-(2, 'Portfolio Website', 'portfolio_images/portfolio.jpg', 'A personal portfolio website showcasing various projects.', 'Jane Smith', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(3, 'E-commerce Website', 'portfolio_images/ecommerce.jpg', 'A fully functional e-commerce website with a custom CMS.', 'John Doe', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(4, 'Portfolio Website', 'portfolio_images/portfolio.jpg', 'A personal portfolio website showcasing various projects.', 'Jane Smith', '2024-08-30 00:52:37', '2024-08-30 00:52:37'),
-(5, 'E-commerce Website', 'portfolio_images/ecommerce.jpg', 'A fully functional e-commerce website with a custom CMS.', 'John Doe', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(6, 'Portfolio Website', 'portfolio_images/portfolio.jpg', 'A personal portfolio website showcasing various projects.', 'Jane Smith', '2024-08-30 00:53:13', '2024-08-30 00:53:13'),
-(7, 'E-commerce Website', 'portfolio_images/ecommerce.jpg', 'A fully functional e-commerce website with a custom CMS.', 'John Doe', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
-(8, 'Portfolio Website', 'portfolio_images/portfolio.jpg', 'A personal portfolio website showcasing various projects.', 'Jane Smith', '2024-08-30 00:53:39', '2024-08-30 00:53:39'),
 (9, 'New Portfolio', 'portfolio_images/od9RKbvzeFGTcFgYn7PyS192q6xJJLRZrEgQA1kM.png', 'Portfolio description', 'Jane Doe', '2024-08-30 01:05:23', '2024-08-30 01:05:23'),
-(10, 'New Portfolio', 'portfolio_images/3S0iMj7hcXy3xelq7bSG8GjcWN4U2xUG1hDcpZkw.png', 'Portfolio description', 'Jane Doe', '2024-08-30 04:27:16', '2024-08-30 04:27:16');
+(10, 'New Portfolio', 'portfolio_images/3S0iMj7hcXy3xelq7bSG8GjcWN4U2xUG1hDcpZkw.png', 'Portfolio description', 'Jane Doe', '2024-08-30 04:27:16', '2024-08-30 04:27:16'),
+(11, 'asdadasd', 'portfolio_images/Tqvmuxp5BZ9stHvHIy4hH97pb63eM8KGC2Z3f0Bp.jpg', 'sadasdsad', 'asdasd', '2024-08-30 07:13:34', '2024-08-30 07:13:34');
 
 -- --------------------------------------------------------
 
@@ -347,9 +322,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `date_of_birth`, `phone_number`, `profile_picture`, `created_at`, `updated_at`) VALUES
-(2, 'Jane Doe', 'janedoe', 'jane@example.com', '$2y$12$HlINQlR.AyxOHaVNoXPZI.y4TppGw.M1VIJbtlyMBbT1mF4KnJGsu', '1990-05-15', '0987654321', 'profile_pictures/janedoe.jpg', '2024-08-29 23:43:25', '2024-08-29 23:43:25'),
-(3, 'Jane Doe Updated', 'janedoe_updated', 'janedoe_updated@example.com', '$2y$12$qLki10.e9EwLmJQhX4TxJedRqH6A3Dk3FAKGUUYESTPnOcZA6l3e.', '1992-05-16', '9876543211', NULL, '2024-08-30 00:43:25', '2024-08-30 01:09:19'),
-(5, 'Jane Doe', 'janeddoe', 'janedoe@example.com', '$2y$12$JGUA10mwgbFyH3WNlkcFUuaCk6twLgZ9ezmQqk8A9dqhsTaqW7d82', '1992-05-15', '9876543210', NULL, '2024-08-30 01:07:08', '2024-08-30 01:07:08');
+(7, 'John Doe', 'johndoe', 'johndoe@example.com', '$2y$12$4wOi6Jqw/hHMyegUio6/.ucdwiDU.i3VoM33eBEkIrT0rGGYDGOaS', '1990-01-01', '1234567890', NULL, '2024-08-30 05:50:42', '2024-08-30 05:50:42'),
+(8, 'sdaadasdasd', 'sdadasd', 'user2@webtech.id', '$2y$12$DYe2I4iGQpMH6Mv9ifIYxOP.f6MJhwwihDEnRn5kj4L7W8Xahjz22', '2024-08-30', '21321331', 'profile_pictures/YHzM7GzwVaNpTJSPDYql5BhQVWFCTU2sXyS46bin.jpg', '2024-08-30 07:21:55', '2024-08-30 07:21:55');
 
 --
 -- Indexes for dumped tables
@@ -463,13 +437,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT untuk tabel `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `blog_comments`
@@ -499,19 +473,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
