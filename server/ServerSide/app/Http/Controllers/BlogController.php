@@ -40,7 +40,7 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::where('id', $id)->first();
 
         $params = $request->validate([
             'image' => ['nullable', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
@@ -60,7 +60,7 @@ class BlogController extends Controller
         return response()->json([
             'status' => 'success',
             'blog' => $blog,
-        ], 200);
+        ], 201);
     }
 
     public function destroy($id)
@@ -76,6 +76,6 @@ class BlogController extends Controller
 
         return response()->json([
             'status' => 'success',
-        ], 200);
+        ], 204  );
     }
 }

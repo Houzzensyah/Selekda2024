@@ -41,7 +41,7 @@ class BlogCommentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $comment = BlogComment::where();
+        $comment = BlogComment::where('id', $id)->first();
 
         $params = $request->validate([
             'name' => ['sometimes', 'required'],
@@ -58,7 +58,7 @@ class BlogCommentController extends Controller
         return response()->json([
             'status' => 'success',
             'comment' => $comment,
-        ], 200);
+        ], 201);
     }
 
     public function destroy($id)
@@ -74,7 +74,7 @@ class BlogCommentController extends Controller
 
         return response()->json([
             'status' => 'success',
-        ], 200);
+        ], 204);
     }
 
 }

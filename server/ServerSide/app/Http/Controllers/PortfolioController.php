@@ -39,29 +39,28 @@ class PortfolioController extends Controller
 
     public function update(Request $request, $id)
     {
-        $portfolio = Portfolio::findOrFail($id);
+        $portfolio = Portfolio::where('id',$id)->first();
 
         $params = $request->validate([
-            'title' => ['sometimes', 'required'],
+            'title' => [ ],
             'image' => ['nullable', 'mimes:jpeg,png,jpg,gif', 'max:2048', 'image'],
-            'description' => ['sometimes', 'required'],
-            'author' => ['sometimes', 'required'],
+            'description' => [ ],
+            'author' => [ ],
         ]);
 
         if ($request->hasFile('portfolio_image')) {
             $params['image'] = $request->file('image')->store('portfolio_images', 'public');
         }
 
-        $portfolio->update($params);
+            $portfolio->update($params);
 
         return response()->json([
             'status' => 'success',
-            'portfolio' => $portfolio,
         ], 200);
     }
     public function destroy($id)
     {
-        $portfolio = Portfolio::findOrFail($id);
+        $portfolio = Portfolio::where('id',$id)->first();
         if(!$portfolio) {
             return response()->json([
                 'status' => 'not-found',
