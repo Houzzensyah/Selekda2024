@@ -22,15 +22,25 @@
     <section class="news-section">
       <div class="news-card">
         <p>Game</p>
-        <button>Play</button>
+        <button @click="playGame">Play</button>
       </div>
       <div class="news-card">
         <p>Design</p>
-        <button>Play</button>
+        <button @click="apps" >Go!</button>
       </div>
     </section>
 
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const playGame = () => {
+  window.location.href = '/game/index.html';
+};
+const apps = () => {
+  window.location.href = '/apps/index.html';
+};
 </script>

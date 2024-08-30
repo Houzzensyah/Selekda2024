@@ -5,11 +5,11 @@
 
       </div>
       <nav class="nav">
-        <button class="nav-button">Dashboard</button>
-        <button class="nav-button">Users Info</button>
-        <button class="nav-button">Report</button>
-        <button class="nav-button">Report</button>
-        <button class="nav-button">Report</button>
+        <button class="nav-button"><router-link to="/admin">Dashboard</router-link></button>
+        <button class="nav-button"><router-link to="/users">Users Info</router-link></button>
+        <button class="nav-button"><router-link to="/blog">Blog</router-link></button>
+        <button class="nav-button"><router-link to="/portfolio">Portfolio</router-link></button>
+        <button class="nav-button"><router-link to="/banner">Banner</router-link></button>
       </nav>
     </aside>
 
@@ -24,6 +24,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import Portfolio from "@/views/Admin/Portfolio.vue";
 </script>
 
 <style>
